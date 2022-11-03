@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      PORT: ${PORT}
+    volumes: 
+      - .:/usr/src/
+      - /usr/src/node_modules/
+    container_name: u-camp-test-backend
+    ports:
+      - 3000:3000
